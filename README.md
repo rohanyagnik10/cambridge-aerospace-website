@@ -9,7 +9,7 @@ The page is plain nginx. The html goes into a ConfigMap with the environment nam
 On a push to main, GitHub calls the Jenkins webhook and the pipeline runs:
 
 ```
-uat -> preprod -> approval -> prod
+uat -> preprod -> prod
 ```
 
 deploy.sh does the work for each environment:

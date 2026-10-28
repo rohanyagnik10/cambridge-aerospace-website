@@ -32,12 +32,6 @@ spec:
             }
         }
 
-        stage('Approve PROD') {
-            steps {
-                input message: 'Deploy to prod?'
-            }
-        }
-
         stage('Deploy PROD') {
             steps {
                 container('k8s') {
