@@ -5,6 +5,7 @@ ENV=$1
 TITLE=$(echo $ENV | tr a-z A-Z)
 
 aws eks update-kubeconfig --name $ENV-cluster --region eu-west-1
+kubectl config set-context --current --namespace=default
 
 sed "s/__ENV__/$TITLE/g" site/index.html > index.html
 
